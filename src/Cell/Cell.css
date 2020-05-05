@@ -1,0 +1,26 @@
+.cell {
+    height: 50px;
+    margin: 0;
+    width: 50px;
+}
+
+.on {
+    -webkit-animation: cell-glow 1s ease-in-out infinite alternate;
+    -moz-animation: cell-glow 1s ease-in-out infinite alternate;
+    animation: cell-glow 1s ease-in-out infinite alternate;
+    background-color: #00a1ab;
+}
+
+.off {
+    background-color: #00263b;
+    border: 1px solid #fff;
+}
+
+@keyframes cell-glow {
+    from {
+      box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #00a1ab, 0 0 8px #00a1ab, 0 0 10px #00a1ab, 0 0 12px #00a1ab, 0 0 4px #00a1ab;
+    }
+    to {
+      box-shadow: 0 0 2px #fff, 0 0 4px #00a1ab, 0 0 6px #00a1ab, 0 0 8px #00a1ab, 0 0 10px #00a1ab, 0 0 12px #00a1ab, 0 0 4px #00a1ab;
+    }
+}
