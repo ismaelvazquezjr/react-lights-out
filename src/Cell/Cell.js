@@ -4,17 +4,17 @@ import './Cell.css';
 class Cell extends Component {
     constructor(props) {
         super(props);
-        this.testHandler = this.testHandler.bind(this);
+        this.flipHandler = this.flipHandler.bind(this);
     }
 
-    testHandler() {
-        this.props.test(this.props.id, this.props.isLit);
+    flipHandler() {
+        this.props.flip(this.props.id, this.props.isLit);
     }
 
     render() {
         let isLit = this.props.isLit ? "on" : "off";
         return (
-            <div className={`cell ${isLit}`} onClick={this.testHandler}>
+            <div className={`cell ${isLit}`} onClick={this.flipHandler}>
 
             </div>
         );

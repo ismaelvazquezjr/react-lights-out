@@ -11,14 +11,18 @@ class Board extends Component {
     constructor(props) {
         super(props);
 
-        let board = this.generateBoard();
-
         this.state = {
-            board: board
+            board: []
         }
 
         this.newGame = this.newGame.bind(this);
-        this.testButton = this.testButton.bind(this);
+        this.flipNeighbors = this.flipNeighbors.bind(this);
+    }
+
+    componentDidMount() {
+        this.setState({
+            board: this.generateBoard()
+        });
     }
 
     generateBoard() {
@@ -29,9 +33,9 @@ class Board extends Component {
             for (let j = 0; j < this.props.nCols; j++) {
                 counter++;
                 if (Math.floor(Math.random() * 4))
-                    board[i][j] = <Cell key={counter} id={counter} isLit={false} test={this.testButton}/>;
+                    board[i][j] = <Cell key={counter} id={counter} isLit={false} flip={this.flipNeighbors}/>;
                 else 
-                    board[i][j] = <Cell key={counter} id={counter} isLit={true} test={this.testButton}/>;
+                    board[i][j] = <Cell key={counter} id={counter} isLit={true} flip={this.flipNeighbors}/>;
             }
         }
         return board;
@@ -44,14 +48,14 @@ class Board extends Component {
         });
     }
 
-    testButton(cell, isLit) {
+    flipNeighbors(cell, isLit) {
         let board = this.state.board.map(row => row.slice());
         let counter = 0;
         for (let i = 0; i < board.length; i++) {
             for (let j = 0; j < board[i].length; j++) {
                 counter++;
                 if (cell === counter) {
-                    board[i][j] = <Cell key={counter} id={counter} isLit={!isLit} test={this.testButton}/>;
+                    board[i][j] = <Cell key={counter} id={counter} isLit={!isLit} flip={this.flipNeighbors}/>;
                 }
             }
         }
