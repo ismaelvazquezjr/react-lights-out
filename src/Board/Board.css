@@ -55,7 +55,8 @@
     transition: background 0.8s;
 }
 
-.board .new-game-button:hover {
+.board .new-game-button:hover, .won-state {
+    cursor: pointer;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;

@@ -8,13 +8,13 @@ class Cell extends Component {
     }
 
     flipHandler() {
-        this.props.flip(this.props.id, this.props.isLit);
+        if (!this.props.disabled) this.props.flip(this.props.id);
     }
 
     render() {
         let isLit = this.props.isLit ? "on" : "off";
         return (
-            <div className={`cell ${isLit}`} onClick={this.flipHandler}>
+            <div className={`cell ${isLit}  ${this.props.disabled && 'is-winner'}`} onClick={this.flipHandler} disabled={this.props.disabled}>
 
             </div>
         );
