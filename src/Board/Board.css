@@ -10,7 +10,7 @@
 
 .board .glow {
     font-family: 'Orbitron', sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #fff;
     text-align: center;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
@@ -81,12 +81,12 @@
     border-radius:20px;
     /* left:50%; */
     /* margin: -50px 0 0 -150px; */
-    padding: 20px 50px;
+    padding: 20px 10%;
     animation: border-flicker 2s linear infinite;
   } 
   
 .glow {
-    letter-spacing:10px;
+    letter-spacing: 2%;
     animation: text-flicker 3s linear infinite;
   }
   

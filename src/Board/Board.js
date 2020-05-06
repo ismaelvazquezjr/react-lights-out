@@ -114,11 +114,11 @@ class Board extends Component {
                 </div>
                 <table>
                     <tbody>
-                        {this.state.board.map(row => {
+                        {this.state.board.map((row,i) => {
                             let r = row.map(cellProp => {
-                                return <td><Cell key={cellProp.key} id={cellProp.id} isLit={cellProp.isLit} flip={cellProp.flip} disabled={cellProp.disabled}/></td>
+                                return <td key={cellProp.key}><Cell id={cellProp.id} isLit={cellProp.isLit} flip={cellProp.flip} disabled={cellProp.disabled}/></td>
                             });
-                            return <tr>{r}</tr>
+                            return <tr key={i}>{r}</tr>
                         })}
                     </tbody>
                 </table>
